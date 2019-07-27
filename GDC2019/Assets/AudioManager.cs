@@ -18,7 +18,7 @@ public class AudioManager : MonoBehaviour
     }
 
     //spiller lyden fra specific GameObject's AudioSource
-    public void PlayOnSpot(GameObject Audio_Source, string AssetName, float Volume)
+    public void Play(GameObject Audio_Source, string AssetName, float Volume)
     {
         int Position = 0;
         int PositionInList = Sounds.Count;
@@ -31,11 +31,6 @@ public class AudioManager : MonoBehaviour
 
         if (PositionInList != Sounds.Count)
             Audio_Source.GetComponent<AudioSource>().PlayOneShot(Sounds[PositionInList], Volume);
-    }
-    public void PlayItNow()
-    {
-        PlayDelayed("HammerSlag", GameObject.Find("MyTestGuy"), 3);
-        Debug.Log("This Is Doing Someting");
     }
     //spiller lyden fra en specific GameObject's AudioSource efter delay
     public void PlayDelayed(string AssetName, GameObject AudioSourceGameObject, float Delay)
@@ -78,6 +73,6 @@ public class AudioManager : MonoBehaviour
     //for test
     public void PlayTestSound()
     {
-        GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+        Play(gameObject, "Bell", 0.4F);
     }
 }
