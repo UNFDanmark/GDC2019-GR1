@@ -17,11 +17,11 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        success();
+        Success();
         
         
     }
-    public void success()
+    public void Success()
     {
         if (Input.GetKeyDown(KeyCode.A) && accept == true || Input.GetKeyDown(KeyCode.D) && accept == false && GameObject.FindGameObjectWithTag("Man") != null)
         {
@@ -41,7 +41,7 @@ public class GameManagerScript : MonoBehaviour
         Destroy(GameObject.FindWithTag("Man"));
         if(GameObject.FindGameObjectWithTag("Man") != null)
         {
-            Invoke("SpawnMan", 0.5f);
+            Invoke("SpawnMan", 1);
         }
         
        
