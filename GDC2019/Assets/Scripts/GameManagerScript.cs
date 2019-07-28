@@ -17,20 +17,20 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        success();
+        Success();
         
         
     }
-    public void success()
+    public void Success()
     {
-        if (Input.GetKeyDown(KeyCode.A) && accept == true || Input.GetKeyDown(KeyCode.D) && accept == false)
+        if (Input.GetKeyDown(KeyCode.A) && accept == true || Input.GetKeyDown(KeyCode.D) && accept == false && GameObject.FindGameObjectWithTag("Man") != null)
         {
             print("success");
             score++;
             UpdateScoreText();
             DestroyMan();
         }
-        else if (Input.GetKeyDown(KeyCode.A) && accept == false || Input.GetKeyDown(KeyCode.D) && accept == true)
+        else if (Input.GetKeyDown(KeyCode.A) && accept == false || Input.GetKeyDown(KeyCode.D) && accept == true && GameObject.FindGameObjectWithTag("Man") != null)
         {
             print("Fail");
             DestroyMan();
@@ -38,8 +38,13 @@ public class GameManagerScript : MonoBehaviour
     }
     void DestroyMan()
     {
-        Destroy(GameObject.FindWithTag("Man"), 2F);
-        Invoke("SpawnMan", 4);
+        Destroy(GameObject.FindWithTag("Man"));
+        if(GameObject.FindGameObjectWithTag("Man") != null)
+        {
+            Invoke("SpawnMan", 1);
+        }
+        
+       
     }
     void SpawnMan()
     {

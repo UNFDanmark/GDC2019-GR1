@@ -10,11 +10,24 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        if (!Instance)
+        /*if (!Instance)
             Instance = gameObject;
         else Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);*/
+    }
+
+    //Stop all Lyd
+    public void StopAll()
+    {
+        foreach (AudioSource a in FindObjectsOfType<AudioSource>())
+            a.Stop();
+    }
+
+    //Stop specific Sound
+    public void Stop(GameObject AudioSourceGameObject)
+    {
+        AudioSourceGameObject.GetComponent<AudioSource>().Stop();
     }
 
     //spiller lyden fra specific GameObject's AudioSource
