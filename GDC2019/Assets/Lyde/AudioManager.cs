@@ -10,11 +10,11 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        /*if (!Instance)
+        if(!Instance)
             Instance = gameObject;
         else Destroy(gameObject);
 
-        DontDestroyOnLoad(gameObject);*/
+        DontDestroyOnLoad(gameObject);
     }
 
     //Stop all Lyd
