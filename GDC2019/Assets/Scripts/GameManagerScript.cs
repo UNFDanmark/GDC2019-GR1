@@ -14,6 +14,7 @@ public class GameManagerScript : MonoBehaviour
     public AssetListScript AssetScript;
     public List<GameObject> Hats = new List<GameObject>();
     public int hatNumList, hatNumPlayer;
+    public int LifeCount = 5;
 
 
     // Start is called before the first frame update
@@ -57,6 +58,7 @@ public class GameManagerScript : MonoBehaviour
             UpdateScoreText();
             Respawn = true;
             RespawnMan();
+            i++;
             
         }
         else if ((Input.GetKeyDown(KeyCode.A) && accept == false || Input.GetKeyDown(KeyCode.D) && accept == true) && GameObject.FindGameObjectWithTag("Man") != null && ManPos.y <= 1)
@@ -64,6 +66,7 @@ public class GameManagerScript : MonoBehaviour
             print("Fail");
             Respawn = true;
             RespawnMan();
+            FindObjectOfType<TimerCountdownScript>().time -= 10;
         }
     }
 
@@ -77,7 +80,7 @@ public class GameManagerScript : MonoBehaviour
             AssetScript.Restart();
             AssetScript.AddClothes();
             hatNumPlayer = Random.Range(0, Hats.Count);
-            i++;
+            
             if (i == quota)
             {
                 i = 0;
@@ -100,4 +103,5 @@ public class GameManagerScript : MonoBehaviour
     {
         GetComponent<Text>().text = "Score: " + score;
     }
+
 }

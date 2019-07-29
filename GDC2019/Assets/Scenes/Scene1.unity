@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -223,8 +223,8 @@ MonoBehaviour:
   - {fileID: 8707667200840743780, guid: 2d22fccade01afa469c1a7dbbbdd4152, type: 3}
   - {fileID: 6620414152161647350, guid: e4a31060647876046849d4047b7977bb, type: 3}
   - {fileID: 3187654130529451952, guid: 10d2042f5ee040140a796095815dc0b0, type: 3}
-  hatNum2: 0
-  hatNum1: 0
+  hatNumList: 0
+  hatNumPlayer: 0
   i: 0
   quota: 5
 --- !u!1 &534577988
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -953,5 +953,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 637515334, guid: 6b30c1fc22bf9be4d821f69a0975496d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6b30c1fc22bf9be4d821f69a0975496d, type: 3}
