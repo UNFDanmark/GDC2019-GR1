@@ -88,7 +88,7 @@ public class GameManagerScript : MonoBehaviour
             {
                 i = 0;
                 Day++;
-                DayValBase = (Mathf.Pow(Day, 0.8f));
+                DayValBase = (Mathf.Pow(Day, 0.7f));
                 DayVal = 5 * DayValBase;
                 quota = (Mathf.Round(DayVal));
                 FindObjectOfType<TimerCountdownScript>().time = 120;
