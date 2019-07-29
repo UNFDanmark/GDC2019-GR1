@@ -225,6 +225,7 @@ MonoBehaviour:
   - {fileID: 3187654130529451952, guid: 10d2042f5ee040140a796095815dc0b0, type: 3}
   hatNumList: 0
   hatNumPlayer: 0
+  LifeCount: 5
   i: 0
   quota: 5
 --- !u!1 &534577988
@@ -262,7 +263,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -433, y: -86}
+  m_AnchoredPosition: {x: -267, y: -86}
   m_SizeDelta: {x: 700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534577990

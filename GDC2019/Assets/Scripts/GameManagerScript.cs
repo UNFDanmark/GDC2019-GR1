@@ -71,7 +71,10 @@ public class GameManagerScript : MonoBehaviour
     }
 
     public int i;
-    public int quota = 5;
+    public int Day = 1;
+    public float quota;
+    public float DayValBase;
+    public float DayVal;
     void RespawnMan()
     {
         if(Respawn == true && ManPos.y <= 3.5f)
@@ -84,8 +87,11 @@ public class GameManagerScript : MonoBehaviour
             if (i == quota)
             {
                 i = 0;
-                quota += 5;
+                DayValBase = (Mathf.Pow(Day, 0.8f));
+                DayVal = 5 * DayValBase;
+                quota = (Mathf.Round(DayVal));
                 FindObjectOfType<TimerCountdownScript>().time = 120;
+                Day++;
             }
         }
 
