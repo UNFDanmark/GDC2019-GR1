@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crown 1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1381390789196440813, guid: c220b84780866c944b2e116b9bb59243,
+        type: 3}
+      propertyPath: m_TagString
+      value: Hat
+      objectReference: {fileID: 0}
     - target: {fileID: 2697926942163343102, guid: c220b84780866c944b2e116b9bb59243,
         type: 3}
       propertyPath: m_LocalPosition.x

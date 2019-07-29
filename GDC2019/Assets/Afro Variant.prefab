@@ -40,7 +40,12 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: eb75916ae1a19894caf9014cb1a35c87,
         type: 3}
       propertyPath: m_Name
-      value: Afro
+      value: Afro Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: eb75916ae1a19894caf9014cb1a35c87,
+        type: 3}
+      propertyPath: m_TagString
+      value: Hat
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: eb75916ae1a19894caf9014cb1a35c87,
         type: 3}
