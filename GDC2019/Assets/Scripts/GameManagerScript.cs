@@ -55,6 +55,7 @@ public class GameManagerScript : MonoBehaviour
         {
             print("success");
             score++;
+            FindObjectOfType<AudioManager>().Play(FindObjectOfType<AudioManager>().gameObject, "Heaven", 1);
             UpdateScoreText();
             Respawn = true;
             RespawnMan();
