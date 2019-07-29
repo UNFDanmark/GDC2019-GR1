@@ -14,7 +14,7 @@ public class GameManagerScript : MonoBehaviour
     public AssetListScript AssetScript;
     public List<GameObject> Hats = new List<GameObject>();
     public int hatNumList, hatNumPlayer;
-    public int LifeCount = 5;
+    public Text CriteriaText;
 
 
     // Start is called before the first frame update
@@ -28,7 +28,7 @@ public class GameManagerScript : MonoBehaviour
         
         //ManPos = AssetScript.ManPos;
         hatNumList = Random.Range(0, Hats.Count);
-        
+        CriteriaText.text = "Required items:\n" + Hats[hatNumList].name;
     }
 
     // Update is called once per frame
@@ -93,6 +93,9 @@ public class GameManagerScript : MonoBehaviour
                 DayVal = 5 * DayValBase;
                 quota = (Mathf.Round(DayVal));
                 FindObjectOfType<TimerCountdownScript>().time = 120;
+                hatNumList = Random.Range(0, Hats.Count);
+
+                CriteriaText.text = "Required items:\n" + Hats[hatNumList].name;
             }
         }
 
