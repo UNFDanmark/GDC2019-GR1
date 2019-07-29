@@ -24,7 +24,7 @@ public class GameManagerScript : MonoBehaviour
         Man = GameObject.FindGameObjectWithTag("Man");
         headObject = GameObject.FindGameObjectWithTag("Head");
         AssetScript = headObject.GetComponent<AssetListScript>();
-        hatNum1 = headObject.GetComponent<AssetListScript>().hatNum;
+        
         //ManPos = AssetScript.ManPos;
         hatNum2 = Random.Range(0, Hats.Count);
         
@@ -33,14 +33,21 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Success();
-
+        
         if(hatNum2 == hatNum1)
         {
             print("True");
+            accept = true;
+            hatNum1 = headObject.GetComponent<AssetListScript>().hatNum;
+        }
+        else
+        {
+            print(false);
+            accept = false;
+            hatNum1 = headObject.GetComponent<AssetListScript>().hatNum;
         }
         ManPos = AssetScript.ManPos;
-
+        Success();
     }
 
     public void Success()
@@ -62,6 +69,8 @@ public class GameManagerScript : MonoBehaviour
         }
     }
 
+    public int i;
+    public int quota = 5;
     void RespawnMan()
     {
         if(Respawn == true && ManPos.y <= 3.5f)
@@ -69,6 +78,13 @@ public class GameManagerScript : MonoBehaviour
             AssetScript.RemoveClothes();
             AssetScript.Restart();
             AssetScript.AddClothes();
+            i++;
+            if (i == quota)
+            {
+                i = 0;
+                quota += 5;
+                FindObjectOfType<TimerCountdownScript>().time = 120;
+            }
         }
 
     }
