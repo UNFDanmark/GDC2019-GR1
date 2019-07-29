@@ -382,8 +382,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1267432405}
-  - component: {fileID: 1267432404}
   - component: {fileID: 1267432403}
+  - component: {fileID: 1267432404}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -401,7 +401,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1b78db378c143974db0a469db13e5a71, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -499,6 +499,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a999bbfb9d62a42a68fd8eb2c548d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sounds:
+  - {fileID: 8300000, guid: 437fef91fdb6ead4ab2536d987a5bc80, type: 3}
+  - {fileID: 8300000, guid: 50a42596bb225494eb85acbce47b7f19, type: 3}
 --- !u!4 &1267432405
 Transform:
   m_ObjectHideFlags: 0
@@ -524,6 +527,7 @@ GameObject:
   - component: {fileID: 1555623879}
   - component: {fileID: 1555623878}
   - component: {fileID: 1555623880}
+  - component: {fileID: 1555623881}
   m_Layer: 0
   m_Name: MousePositionSoundEffectTest
   m_TagString: Untagged
@@ -538,14 +542,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555623877}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa6dc687b82d81147a2d38d6aebffa37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   x: 0
-  y: 0
-  Distance: 500
+  y: 540
+  Distance: 300
 --- !u!4 &1555623879
 Transform:
   m_ObjectHideFlags: 0
@@ -570,7 +574,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3bba160917b3d0a468cd2fdef5be22a7, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -656,6 +660,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1555623881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555623877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84549d2ba5c0a004e943cfd58905cd88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BackgroundSounds:
+  - {fileID: 8300000, guid: 437fef91fdb6ead4ab2536d987a5bc80, type: 3}
+  - {fileID: 8300000, guid: 50a42596bb225494eb85acbce47b7f19, type: 3}
+  VolumeForBackgroundAudio: 1
 --- !u!1 &1665573609
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,7 +885,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1267432404}
+      - m_Target: {fileID: 0}
         m_MethodName: PlayTestSound
         m_Mode: 1
         m_Arguments:
