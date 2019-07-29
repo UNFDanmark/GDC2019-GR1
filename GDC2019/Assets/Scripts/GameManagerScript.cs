@@ -13,7 +13,8 @@ public class GameManagerScript : MonoBehaviour
     public GameObject headObject;
     public AssetListScript AssetScript;
     public List<GameObject> Hats = new List<GameObject>();
-    public int hatNum2, hatNum1;
+    public int hatNumList, hatNumPlayer;
+    public int LifeCount = 5;
 
 
     // Start is called before the first frame update
@@ -26,25 +27,23 @@ public class GameManagerScript : MonoBehaviour
         AssetScript = headObject.GetComponent<AssetListScript>();
         
         //ManPos = AssetScript.ManPos;
-        hatNum2 = Random.Range(0, Hats.Count);
+        hatNumList = Random.Range(0, Hats.Count);
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if(hatNum2 == hatNum1)
+        hatNumPlayer = headObject.GetComponent<AssetListScript>().hatNum;
+        if (hatNumList == hatNumPlayer)
         {
             print("True");
             accept = true;
-            hatNum1 = headObject.GetComponent<AssetListScript>().hatNum;
         }
         else
         {
-            print(false);
+            print("false");
             accept = false;
-            hatNum1 = headObject.GetComponent<AssetListScript>().hatNum;
         }
         ManPos = AssetScript.ManPos;
         Success();
@@ -52,20 +51,22 @@ public class GameManagerScript : MonoBehaviour
 
     public void Success()
     {
-        if (Input.GetKeyDown(KeyCode.A) && accept == true || Input.GetKeyDown(KeyCode.D) && accept == false && GameObject.FindGameObjectWithTag("Man") != null && ManPos.y <= 1)
+        if ((Input.GetKeyDown(KeyCode.A) && accept == true || Input.GetKeyDown(KeyCode.D) && accept == false) && GameObject.FindGameObjectWithTag("Man") != null && ManPos.y <= 1)
         {
             print("success");
             score++;
             UpdateScoreText();
             Respawn = true;
             RespawnMan();
+            i++;
             
         }
-        else if (Input.GetKeyDown(KeyCode.A) && accept == false || Input.GetKeyDown(KeyCode.D) && accept == true && GameObject.FindGameObjectWithTag("Man") != null && ManPos.y <= 1)
+        else if ((Input.GetKeyDown(KeyCode.A) && accept == false || Input.GetKeyDown(KeyCode.D) && accept == true) && GameObject.FindGameObjectWithTag("Man") != null && ManPos.y <= 1)
         {
             print("Fail");
             Respawn = true;
             RespawnMan();
+            FindObjectOfType<TimerCountdownScript>().time -= 10;
         }
     }
 
@@ -78,7 +79,8 @@ public class GameManagerScript : MonoBehaviour
             AssetScript.RemoveClothes();
             AssetScript.Restart();
             AssetScript.AddClothes();
-            i++;
+            hatNumPlayer = Random.Range(0, Hats.Count);
+            
             if (i == quota)
             {
                 i = 0;
@@ -95,10 +97,11 @@ public class GameManagerScript : MonoBehaviour
          //GameObject.FindGameObjectWithTag("Head");
         AssetListScript AssetScript = headObject.GetComponent<AssetListScript>();
         AssetScript = headObject.GetComponent<AssetListScript>();
-        AssetScript.hatNum = hatNum1;
+        AssetScript.hatNum = hatNumPlayer;
     }
     void UpdateScoreText()
     {
         GetComponent<Text>().text = "Score: " + score;
     }
+
 }

@@ -35,7 +35,7 @@ public class AssetListScript : MonoBehaviour
 
     public void AddClothes()
     {
-        int hatNum = Random.Range(0, hats.Count);
+        hatNum = Random.Range(0, hats.Count);
 
         //spawns object
         GameObject spawnObject = Instantiate(hats[hatNum], transform);
