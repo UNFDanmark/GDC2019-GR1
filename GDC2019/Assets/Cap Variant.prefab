@@ -10,7 +10,12 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: c06860f33c771b745a1d9d64c6632358,
         type: 3}
       propertyPath: m_Name
-      value: Cap
+      value: Cap Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c06860f33c771b745a1d9d64c6632358,
+        type: 3}
+      propertyPath: m_TagString
+      value: Hat
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c06860f33c771b745a1d9d64c6632358,
         type: 3}
