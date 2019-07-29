@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 030c306aa7f9e3a4e9cca45cabcf66d6, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -223,10 +223,15 @@ MonoBehaviour:
   - {fileID: 8707667200840743780, guid: 2d22fccade01afa469c1a7dbbbdd4152, type: 3}
   - {fileID: 6620414152161647350, guid: e4a31060647876046849d4047b7977bb, type: 3}
   - {fileID: 3187654130529451952, guid: 10d2042f5ee040140a796095815dc0b0, type: 3}
+  - {fileID: 8019981289356801496, guid: 65d9ae0f6c6e41845b5e0eddbec7de90, type: 3}
   hatNumList: 0
   hatNumPlayer: 0
+  LifeCount: 5
   i: 0
+  Day: 1
   quota: 5
+  DayValBase: 0
+  DayVal: 0
 --- !u!1 &534577988
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +267,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -433, y: -86}
+  m_AnchoredPosition: {x: -267, y: -86}
   m_SizeDelta: {x: 700, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534577990
@@ -953,6 +958,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5092426810399054542, guid: 6b30c1fc22bf9be4d821f69a0975496d,
+        type: 3}
+      propertyPath: hats.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092426810399054542, guid: 6b30c1fc22bf9be4d821f69a0975496d,
+        type: 3}
+      propertyPath: hats.Array.data[3]
+      value: 
+      objectReference: {fileID: 8019981289356801496, guid: 65d9ae0f6c6e41845b5e0eddbec7de90,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 637515334, guid: 6b30c1fc22bf9be4d821f69a0975496d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6b30c1fc22bf9be4d821f69a0975496d, type: 3}

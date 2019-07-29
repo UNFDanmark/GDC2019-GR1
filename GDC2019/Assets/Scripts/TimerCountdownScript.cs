@@ -16,8 +16,10 @@ public class TimerCountdownScript : MonoBehaviour
     void Update()
     {
         time = time - Time.deltaTime;
-        GetComponent<Text>().text = "Time Left: " + time.ToString("f0");
-
+        if (time < 0) time = 0;
+        float sec = time % 60;
+        GetComponent<Text>().text = "Time Left: " + (((time-sec)<60) ? "0" : ((time - sec) / 60).ToString()) + (((int)sec < 10) ? ":0" : ":") + (int)sec;
+        
         if (time <= 0) print("Game Over");
     }
 }

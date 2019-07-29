@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Hat
   - Man
   - Head
-  - Hat
   layers:
   - Default
   - TransparentFX
