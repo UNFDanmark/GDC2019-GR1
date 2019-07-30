@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -66,6 +67,27 @@ public class AudioManager : MonoBehaviour
         {
             AudioSourceGameObject.GetComponent<AudioSource>().clip = Sounds[PositionInList];
             AudioSourceGameObject.GetComponent<AudioSource>().PlayDelayed(Delay);
+        }
+    }
+    //spiller lyden fra på et præcis vector3 efter delay
+    public void PlayDelayedAtPoint(string AssetName, Vector3 Point, float Delay)
+    {
+        int Position = 0;
+        int PositionInList = Sounds.Count;
+        foreach (AudioClip clipNames in Sounds)
+        {
+            if (clipNames.name == AssetName)
+                PositionInList = Position;
+            Position++;
+        }
+       
+        if (PositionInList != Sounds.Count)
+        {
+            GameObject AudioPlayer = new GameObject();
+            AudioPlayer.AddComponent<AudioSource>();
+            AudioPlayer.GetComponent<AudioSource>().clip = Sounds[PositionInList];
+            AudioPlayer.GetComponent<AudioSource>().PlayDelayed(Delay);
+            Destroy(AudioPlayer, Sounds[PositionInList].length);
         }
     }
     //spiller lyden fra en specific GameObject's AudioSource på en Vector3 placering
