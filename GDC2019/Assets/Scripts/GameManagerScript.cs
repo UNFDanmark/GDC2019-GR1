@@ -16,7 +16,7 @@ public class GameManagerScript : MonoBehaviour
     public List<GameObject> Chest = new List<GameObject>();
     public List<GameObject> FaceHair = new List<GameObject>();
     public List<GameObject> Eye = new List<GameObject>();
-    public int hatNumList, chestNumList, FaceHairNumList, EyeNumList, hatNumPlayer;
+    public int hatNumList, chestNumList, FaceHairNumList, EyeNumList, hatNum, chestNum, faceNum, eyeNum;
     public Text CriteriaText;
     public Text DayCountText;
 
@@ -44,8 +44,12 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hatNumPlayer = headObject.GetComponent<AssetListScript>().hatNum;
-        if (hatNumList == hatNumPlayer)
+        hatNum = headObject.GetComponent<AssetListScript>().hatNum;
+        chestNum = headObject.GetComponent<AssetListScript>().chestNum;
+        faceNum = headObject.GetComponent<AssetListScript>().faceNum;
+        eyeNum = headObject.GetComponent<AssetListScript>().eyeNum;
+
+        if ((hatNumList == hatNum) || (chestNumList == chestNum) || (FaceHairNumList == faceNum) || (EyeNumList == eyeNum))
         {
             print("True");
             accept = true;
@@ -94,7 +98,7 @@ public class GameManagerScript : MonoBehaviour
             AssetScript.RemoveClothes();
             AssetScript.Restart();
             AssetScript.AddClothes();
-            hatNumPlayer = Random.Range(0, Hats1.Count);
+            hatNum = Random.Range(0, Hats1.Count);
             
             if (i == quota)
             {
@@ -118,8 +122,8 @@ public class GameManagerScript : MonoBehaviour
         if(Day == 1)
         {
             hatNumList = Random.Range(0, Hats1.Count);
-            hatNumPlayer = headObject.GetComponent<AssetListScript>().hatNum;
-            if (hatNumList == hatNumPlayer)
+            hatNum = headObject.GetComponent<AssetListScript>().hatNum;
+            if (hatNumList == hatNum)
             {
                 print("True");
                 accept = true;
@@ -130,7 +134,15 @@ public class GameManagerScript : MonoBehaviour
                 accept = false;
             }
         }
-        else if(Day == 2)
+        else if(Day == 3)
+        {
+
+        }
+        else if(Day == 5)
+        {
+
+        }
+        else if(Day == 7)
         {
 
         }
@@ -144,7 +156,7 @@ public class GameManagerScript : MonoBehaviour
          //GameObject.FindGameObjectWithTag("Head");
         AssetListScript AssetScript = headObject.GetComponent<AssetListScript>();
         AssetScript = headObject.GetComponent<AssetListScript>();
-        AssetScript.hatNum = hatNumPlayer;
+        AssetScript.hatNum = hatNum;
     }
     void UpdateScoreText()
     {
