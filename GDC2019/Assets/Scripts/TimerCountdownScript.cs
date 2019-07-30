@@ -22,6 +22,10 @@ public class TimerCountdownScript : MonoBehaviour
         GetComponent<Text>().text = "Time Left: " + (((time-sec)<60) ? "0" : ((time - sec) / 60).ToString()) + (((int)sec < 10) ? ":0" : ":") + (int)sec;
 
         if (time <= 0)
+        {
+            Debug.Log("Gameover");
             SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            FindObjectOfType<AudioManager>().PlaySolo(FindObjectOfType<AudioManager>().gameObject, "GAMEOVER v4", 1);
+        }
     }
 }
