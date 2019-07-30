@@ -218,16 +218,22 @@ MonoBehaviour:
   accept: 0
   Respawn: 1
   score: 0
-  headObject: {fileID: 1318015772}
-  AssetScript: {fileID: 0}
-  Hats:
+  headObject: {fileID: 1045721764}
+  AssetScript: {fileID: 1045721765}
+  Hats1:
   - {fileID: 8707667200840743780, guid: 2d22fccade01afa469c1a7dbbbdd4152, type: 3}
   - {fileID: 6620414152161647350, guid: e4a31060647876046849d4047b7977bb, type: 3}
-  - {fileID: 3187654130529451952, guid: 10d2042f5ee040140a796095815dc0b0, type: 3}
   - {fileID: 8019981289356801496, guid: 65d9ae0f6c6e41845b5e0eddbec7de90, type: 3}
+  - {fileID: 3268950927196613169, guid: 940b1d0c44c07fe4bb9f664e034cc172, type: 3}
+  - {fileID: 5377315337513945408, guid: 0a443de5dd26e4a4589a00665de3cfee, type: 3}
+  Hats2: []
+  Chest: []
+  FaceHair: []
+  Eye: []
   hatNumList: 0
   hatNumPlayer: 0
   CriteriaText: {fileID: 1605310413}
+  DayCountText: {fileID: 1507641466}
   i: 0
   Day: 1
   quota: 5
@@ -516,7 +522,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 48
   m_CollisionDetection: 0
 --- !u!136 &667864647
 CapsuleCollider:
@@ -854,7 +860,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1098247109}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1045721767
+--- !u!114 &1045721765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -866,11 +872,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae2e54b25eb02e45b955385b311498b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hats:
+  hats1:
   - {fileID: 8707667200840743780, guid: 2d22fccade01afa469c1a7dbbbdd4152, type: 3}
   - {fileID: 6620414152161647350, guid: e4a31060647876046849d4047b7977bb, type: 3}
-  - {fileID: 3187654130529451952, guid: 10d2042f5ee040140a796095815dc0b0, type: 3}
   - {fileID: 8019981289356801496, guid: 65d9ae0f6c6e41845b5e0eddbec7de90, type: 3}
+  - {fileID: 3268950927196613169, guid: 940b1d0c44c07fe4bb9f664e034cc172, type: 3}
+  - {fileID: 5377315337513945408, guid: 0a443de5dd26e4a4589a00665de3cfee, type: 3}
+  hats2: []
+  chest: []
+  faceHair: []
+  eye: []
   hatNum: 0
   ManagerScript: {fileID: 0}
   GameManager: {fileID: 0}
@@ -974,12 +985,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1591454a2077e4b4fbac4960a48ed3b3, type: 3}
---- !u!1 &1318015772 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6898841704912845088, guid: 1591454a2077e4b4fbac4960a48ed3b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1098247109}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1434985958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,6 +1068,85 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1507641464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1507641465}
+  - component: {fileID: 1507641467}
+  - component: {fileID: 1507641466}
+  m_Layer: 5
+  m_Name: DayCount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1507641465
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507641464}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2142950981}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -71}
+  m_SizeDelta: {x: 200, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1507641466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507641464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 75
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 7
+    m_MaxSize: 75
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Day:'
+--- !u!222 &1507641467
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507641464}
+  m_CullTransparentMesh: 0
 --- !u!1 &1605310411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,6 +1411,7 @@ RectTransform:
   - {fileID: 534577989}
   - {fileID: 759089123}
   - {fileID: 1605310412}
+  - {fileID: 1507641465}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

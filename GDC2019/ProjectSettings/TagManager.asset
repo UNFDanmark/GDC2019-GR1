@@ -7,6 +7,10 @@ TagManager:
   - Hat
   - Man
   - Head
+  - Hat2
+  - FaceHair
+  - Chest
+  - Eye
   layers:
   - Default
   - TransparentFX
