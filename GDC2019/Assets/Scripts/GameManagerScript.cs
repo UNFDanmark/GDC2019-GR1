@@ -16,6 +16,7 @@ public class GameManagerScript : MonoBehaviour
     public List<GameObject> Chest = new List<GameObject>();
     public List<GameObject> FaceHair = new List<GameObject>();
     public List<GameObject> Eye = new List<GameObject>();
+    public List<int> intList = new List<int>();
     public int hatNumList, chestNumList, FaceHairNumList, EyeNumList, hatNum, chestNum, faceNum, eyeNum;
     public Text CriteriaText;
     public Text DayCountText;
@@ -37,7 +38,7 @@ public class GameManagerScript : MonoBehaviour
         chestNumList = Random.Range(0, Chest.Count);
         FaceHairNumList = Random.Range(0, FaceHair.Count);
         EyeNumList = Random.Range(0, EyeNumList);
-        CriteriaText.text = "Send to Hell if:\n" + Hats1[hatNumList].name;
+        CriteriaText.text = "Send to Hell if:\n" + "Hat: " + Hats1[hatNumList].name;
         DayCountText.text = "Day: " + Day;
     }
 
@@ -48,6 +49,13 @@ public class GameManagerScript : MonoBehaviour
         chestNum = headObject.GetComponent<AssetListScript>().chestNum;
         faceNum = headObject.GetComponent<AssetListScript>().faceNum;
         eyeNum = headObject.GetComponent<AssetListScript>().eyeNum;
+
+        intList.Add(hatNumList);
+        intList.Add(chestNumList);
+        intList.Add(FaceHairNumList);
+        intList.Add(EyeNumList);
+
+
 
         if ((hatNumList == hatNum) || (chestNumList == chestNum) || (FaceHairNumList == faceNum) || (EyeNumList == eyeNum))
         {
@@ -160,7 +168,7 @@ public class GameManagerScript : MonoBehaviour
     }
     void UpdateScoreText()
     {
-        GetComponent<Text>().text = "Score: " + score;
+        GetComponent<Text>().text = "Klienter: " + score;
     }
 
 }
