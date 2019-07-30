@@ -1,0 +1,12 @@
+float DelayedExtra = 0;
+
+DelayedExtra = 0.3f;
+
+if (Input.GetKeyDown("a"))
+            FindObjectOfType<AudioManager>().PlayDelayedAtPointWithCancel("Heaven", new Vector3(0, 3, -23), DelayedExtra); 
+        if (Input.GetKeyDown("d"))
+        {
+            FindObjectOfType<AudioManager>().PlayAtPositionWithCancel("Burn in Hell you son of a bitch", new Vector3(0, -2, -23), 1);
+            //FindObjectOfType<AudioManager>().PlayDelayedAtPointWithCancel("Lava", new Vector3(0, -3, -23), 1.2f);
+            //FindObjectOfType<AudioManager>().PlayDelayedAtPoint("Burst into Ash", new Vector3(0, -3, -23), 1.6f);
+        }
