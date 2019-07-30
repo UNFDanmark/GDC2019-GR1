@@ -9,12 +9,7 @@ public class PlayGameScene : MonoBehaviour
     public float StartTime = 1;
     public bool Fade;
     public List<Text> TheTexts = new List<Text>();
-    bool Once;
 
-    private void OnEnable()
-    {
-        Once = false;
-    }
     private void Update()
     {
         if (Fade)
@@ -23,7 +18,7 @@ public class PlayGameScene : MonoBehaviour
                 StartTime -= Time.deltaTime;
             foreach (Text t in TheTexts)
                 t.color = new Color(1, 0, 0, StartTime);
-            if (StartTime <= 0 && !Once)
+            if (StartTime <= 0)
                 BeginGame();
         }
     }
