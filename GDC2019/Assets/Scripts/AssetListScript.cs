@@ -47,8 +47,11 @@ public class AssetListScript : MonoBehaviour
         hatNum = Random.Range(0, hats1.Count);
 
         //spawns object
-        GameObject spawnObject = Instantiate(hats1[hatNum], transform);
+        GameObject spawnObjectH = Instantiate(hats1[hatNum], transform);
         print(hatNum);
+        GameObject spawnObjectC = Instantiate(chest[chestNum], transform);
+        GameObject spawnObjectF = Instantiate(faceHair[faceNum], transform);
+        GameObject spawnObjectE = Instantiate(eye[eyeNum], transform);
     }
 
     public void RemoveClothes()
