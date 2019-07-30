@@ -25,7 +25,7 @@ public class TimerCountdownScript : MonoBehaviour
         {
             Debug.Log("Gameover");
             SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
-            FindObjectOfType<AudioManager>().PlaySolo(FindObjectOfType<AudioManager>().gameObject, "GAMEOVER v4", 1);
+            FindObjectOfType<AudioManager>().PlaySolo(FindObjectOfType<AudioManager>().gameObject, "GAMEOVER v6", 1);
         }
     }
 }
