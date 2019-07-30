@@ -42,6 +42,7 @@ public class GameManagerScript : MonoBehaviour
         DayCountText.text = "Day: " + Day;
     }
 
+    float DelayedExtra = 0;
     // Update is called once per frame
     void Update()
     {
@@ -75,6 +76,7 @@ public class GameManagerScript : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.A) && accept == false || Input.GetKeyDown(KeyCode.D) && accept == true) && GameObject.FindGameObjectWithTag("Man") != null && ManPos.y <= 1)
         {
+            DelayedExtra = 0.3f;
             print("success");
             score++;
             //FindObjectOfType<AudioManager>().Play(FindObjectOfType<AudioManager>().gameObject, "Heaven", 1);
@@ -91,6 +93,14 @@ public class GameManagerScript : MonoBehaviour
             Respawn = true;
             RespawnMan();
             FindObjectOfType<TimerCountdownScript>().time -= 10;
+        }
+        if (Input.GetKeyDown("a"))
+            FindObjectOfType<AudioManager>().PlayDelayedAtPointWithCancel("Heaven", new Vector3(0, 3, -23), DelayedExtra);
+        if (Input.GetKeyDown("d"))
+        {
+            FindObjectOfType<AudioManager>().PlayAtPositionWithCancel("Burn in Hell you son of a bitch", new Vector3(0, -2, -23), 1);
+            //FindObjectOfType<AudioManager>().PlayDelayedAtPointWithCancel("Lava", new Vector3(0, -3, -23), 1.2f);
+            //FindObjectOfType<AudioManager>().PlayDelayedAtPoint("Burst into Ash", new Vector3(0, -3, -23), 1.6f);
         }
     }
 
