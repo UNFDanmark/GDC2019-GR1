@@ -495,6 +495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 71341122}
+  - component: {fileID: 71341123}
   m_Layer: 5
   m_Name: IntroMenu
   m_TagString: Untagged
@@ -526,6 +527,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &71341123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71341121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4ca93f3e486ff4288e44000d861b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClipName: Backstory
 --- !u!1 &110104566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,8 +1597,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Hej L\xF8nslave.\nN\xE5r dagen starter, ville du til din venstre kunne
-    se en liste. P\xE5 den liste vil der blive n\xE6vnt hvilke kriterier, der g\xF8r
+  m_Text: "Hej L\xF8nslave.\nN\xE5r dagen starter, vil du til din venstre kunne se
+    en liste. P\xE5 den liste vil der blive n\xE6vnt hvilke kriterier, der g\xF8r
     at en person skal sendes til \rhelvede. Hvis personen du evaluerer besidder en
     eller flere af de n\xE6vnte ting p\xE5 listen, s\xE5 skal de sendes til helvede.
     Jo l\xE6ngere du holder ud, jo sv\xE6rere bliver det. \r\nPersonerne du evaluerer
@@ -2041,7 +2055,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1ce485f9828761748a49a82136dbbd86, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.409
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2147,7 +2161,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7234159ba08b7d4429d85fa63bfbc64b, type: 3}
   - {fileID: 8300000, guid: db21a315ad9d6b34aa00d51e2ad8afa6, type: 3}
   - {fileID: 8300000, guid: 128bdf5dd8c82184c8935fd103e8195d, type: 3}
-  - {fileID: 8300000, guid: 65c0d49c5552c214683f006d00f6feed, type: 3}
+  - {fileID: 8300000, guid: ca9dcc363d5602c43add06a8d8128ec4, type: 3}
+  - {fileID: 8300000, guid: 6c5d6981075a42d40abda70679d4eb49, type: 3}
+  - {fileID: 8300000, guid: 3ce9255dd95e4634d81102a27ee2d533, type: 3}
   SoundTrackVolume: 0.4
   SoundTrack: {fileID: 8300000, guid: 1ce485f9828761748a49a82136dbbd86, type: 3}
 --- !u!4 &910131629
@@ -3109,7 +3125,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1434985958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -92.7}
+  m_LocalPosition: {x: 0, y: 0, z: -90}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 248138794}
@@ -3889,6 +3905,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2095321783}
+  - component: {fileID: 2095321784}
   m_Layer: 5
   m_Name: ExtraInfoMenu
   m_TagString: Untagged
@@ -3920,6 +3937,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2095321784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095321782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4ca93f3e486ff4288e44000d861b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ClipName: How To
 --- !u!1 &2102097532
 GameObject:
   m_ObjectHideFlags: 0
@@ -4005,7 +4035,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102097532}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -65,9 +65,27 @@ public class AudioManager : MonoBehaviour
             Invoke("PlaySoundTrackAgain", Sounds[PositionInList].length);
         }
     }
+    public void PlayNarrator(GameObject Audio_Source, string AssetName, float Volume)
+    {
+        int Position = 0;
+        int PositionInList = Sounds.Count;
+        foreach (AudioClip clipNames in Sounds)
+        {
+            if (clipNames.name == AssetName)
+                PositionInList = Position;
+            Position++;
+        }
+
+        if (PositionInList != Sounds.Count)
+        {
+            Audio_Source.GetComponent<AudioSource>().clip = Sounds[PositionInList];
+            Audio_Source.GetComponent<AudioSource>().volume = Volume;
+            Audio_Source.GetComponent<AudioSource>().Play();
+        }
+    }
     [Range(0,1)]public float SoundTrackVolume;
     public AudioClip SoundTrack;
-    void PlaySoundTrackAgain()
+    public void PlaySoundTrackAgain()
     {
         GetComponent<AudioSource>().clip = SoundTrack;
         GetComponent<AudioSource>().volume = SoundTrackVolume;
