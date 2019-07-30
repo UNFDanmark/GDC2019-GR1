@@ -23,7 +23,7 @@ public class ChangeSceneOnClick : MonoBehaviour
             if(StartTime > 0)
                 StartTime -= Time.deltaTime;
             foreach (Text t in TheTexts)
-                t.color = new Color(1, 0, 0, StartTime);
+                t.color = new Color(t.color.r, t.color.g, t.color.b, StartTime);
             if (StartTime <= 0)
                 if(!Once)
                     ChangeMenu();
@@ -41,16 +41,19 @@ public class ChangeSceneOnClick : MonoBehaviour
         {
             g.SetActive(true);
             if (g.GetComponent<Text>() != null)
-                g.GetComponent<Text>().color = new Color(1, 0, 0, 1);
-            if(g.transform.childCount > 0)
+                g.GetComponent<Text>().color = new Color(g.GetComponent<Text>().color.r, g.GetComponent<Text>().color.g,
+                    g.GetComponent<Text>().color.b, 1);
+            if (g.transform.childCount > 0)
                 foreach (Transform t in g.transform)
                 {
-                    if (t.GetComponent<Text>() != null)
-                        t.GetComponent<Text>().color = new Color(1, 0, 0, 1);
+                    if(t.GetComponent<Text>() !=  null)
+                        t.GetComponent<Text>().color = new Color(t.GetComponent<Text>().color.r, t.GetComponent<Text>().color.g,
+                            t.GetComponent<Text>().color.b, 1);
                     if (t.childCount > 0)
                         foreach (Transform c in t)
-                            if (c.GetComponent<Text>() != null)
-                                c.GetComponent<Text>().color = new Color(1, 0, 0, 1);
+                            if(c.GetComponent<Text>() != null)
+                                c.GetComponent<Text>().color = new Color(c.GetComponent<Text>().color.r, c.GetComponent<Text>().color.g,
+                                    c.GetComponent<Text>().color.b, 1);
                 }
         }
         foreach (GameObject b in NewInactive)
