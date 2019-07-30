@@ -51,16 +51,17 @@ public class GameManagerScript : MonoBehaviour
 
     public void Success()
     {
+        float DelayedExtra = 0;
         if ((Input.GetKeyDown(KeyCode.A) && accept == true || Input.GetKeyDown(KeyCode.D) && accept == false) && GameObject.FindGameObjectWithTag("Man") != null && ManPos.y <= 1)
         {
+            DelayedExtra = 0.3f;
             print("success");
             score++;
-            FindObjectOfType<AudioManager>().Play(FindObjectOfType<AudioManager>().gameObject, "Heaven", 1);
             UpdateScoreText();
             Respawn = true;
             RespawnMan();
             i++;
-            
+            FindObjectOfType<AudioManager>().Play(FindObjectOfType<AudioManager>().gameObject, "Bell", 1);
         }
         else if ((Input.GetKeyDown(KeyCode.A) && accept == false || Input.GetKeyDown(KeyCode.D) && accept == true) && GameObject.FindGameObjectWithTag("Man") != null && ManPos.y <= 1)
         {
@@ -69,10 +70,14 @@ public class GameManagerScript : MonoBehaviour
             RespawnMan();
             FindObjectOfType<TimerCountdownScript>().time -= 10;
         }
-        if (Input.GetKeyDown("A"))
-            FindObjectOfType<AudioManager>().PlayDelayedAtPoint("Heaven", new Vector3(0, 3, -23), 1.5f);
-        if (Input.GetKeyDown("D"))
-            FindObjectOfType<AudioManager>().PlayDelayedAtPoint("Lava", new Vector3(0, -3, -23), 1.5f);
+        if (Input.GetKeyDown("a"))
+            FindObjectOfType<AudioManager>().PlayDelayedAtPointWithCancel("Heaven", new Vector3(0, 3, -23), DelayedExtra); 
+        if (Input.GetKeyDown("d"))
+        {
+            FindObjectOfType<AudioManager>().PlayAtPositionWithCancel("Burn in Hell you son of a bitch", new Vector3(0, -2, -23), 1);
+            //FindObjectOfType<AudioManager>().PlayDelayedAtPointWithCancel("Lava", new Vector3(0, -3, -23), 1.2f);
+            //FindObjectOfType<AudioManager>().PlayDelayedAtPoint("Burst into Ash", new Vector3(0, -3, -23), 1.6f);
+        }
     }
 
     public int i;
