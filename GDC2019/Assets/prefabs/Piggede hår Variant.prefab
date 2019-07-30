@@ -10,7 +10,12 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 8db712faa7de73f4b8e2cf30bb41b44a,
         type: 3}
       propertyPath: m_Name
-      value: "Piggede h\xE5r"
+      value: "Piggede h\xE5r Variant"
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8db712faa7de73f4b8e2cf30bb41b44a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Hat
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8db712faa7de73f4b8e2cf30bb41b44a,
         type: 3}

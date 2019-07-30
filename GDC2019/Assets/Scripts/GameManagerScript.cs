@@ -111,7 +111,7 @@ public class GameManagerScript : MonoBehaviour
             if (i == quota)
             {
                 i = 0;
-                DayValBase = (Mathf.Pow(Day, 0.7f));
+                DayValBase = (Mathf.Pow(Day, 0.9f));
                 DayVal = 5 * DayValBase;
                 quota = (Mathf.Round(DayVal));
                 Day++;
