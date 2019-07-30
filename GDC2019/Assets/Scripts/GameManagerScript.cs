@@ -61,7 +61,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void Success()
     {
-        if ((Input.GetKeyDown(KeyCode.A) && accept == true || Input.GetKeyDown(KeyCode.D) && accept == false) && GameObject.FindGameObjectWithTag("Man") != null && ManPos.y <= 1)
+        if ((Input.GetKeyDown(KeyCode.A) && accept == false || Input.GetKeyDown(KeyCode.D) && accept == true) && GameObject.FindGameObjectWithTag("Man") != null && ManPos.y <= 1)
         {
             print("success");
             score++;
@@ -70,9 +70,10 @@ public class GameManagerScript : MonoBehaviour
             Respawn = true;
             RespawnMan();
             i++;
-            
+            hatNumList = Random.Range(0, Hats1.Count);
+
         }
-        else if ((Input.GetKeyDown(KeyCode.A) && accept == false || Input.GetKeyDown(KeyCode.D) && accept == true) && GameObject.FindGameObjectWithTag("Man") != null && ManPos.y <= 1)
+        else if ((Input.GetKeyDown(KeyCode.A) && accept == true || Input.GetKeyDown(KeyCode.D) && accept == false) && GameObject.FindGameObjectWithTag("Man") != null && ManPos.y <= 1)
         {
             print("Fail");
             Respawn = true;
