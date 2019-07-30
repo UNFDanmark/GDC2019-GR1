@@ -12,23 +12,33 @@ public class GameManagerScript : MonoBehaviour
     public int score = 0;
     public GameObject headObject;
     public AssetListScript AssetScript;
-    public List<GameObject> Hats = new List<GameObject>();
-    public int hatNumList, hatNumPlayer;
+    public List<GameObject> Hats1 = new List<GameObject>();
+    public List<GameObject> Chest = new List<GameObject>();
+    public List<GameObject> FaceHair = new List<GameObject>();
+    public List<GameObject> Eye = new List<GameObject>();
+    public int hatNumList, chestNumList, FaceHairNumList, EyeNumList, hatNumPlayer;
     public Text CriteriaText;
+    public Text DayCountText;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Day = 1;
         UpdateScoreText();
         Man = GameObject.FindGameObjectWithTag("Man");
         headObject = GameObject.FindGameObjectWithTag("Head");
         AssetScript = headObject.GetComponent<AssetListScript>();
         
+        
+
         //ManPos = AssetScript.ManPos;
-        hatNumList = Random.Range(0, Hats.Count);
-        CriteriaText.text = "Required items:\n" + Hats[hatNumList].name;
+        hatNumList = Random.Range(0, Hats1.Count);
+        chestNumList = Random.Range(0, Chest.Count);
+        FaceHairNumList = Random.Range(0, FaceHair.Count);
+        EyeNumList = Random.Range(0, EyeNumList);
+        CriteriaText.text = "Send to Hell if:\n" + Hats1[hatNumList].name;
+        DayCountText.text = "Day: " + Day;
     }
 
     // Update is called once per frame
@@ -55,7 +65,7 @@ public class GameManagerScript : MonoBehaviour
         {
             print("success");
             score++;
-            FindObjectOfType<AudioManager>().Play(FindObjectOfType<AudioManager>().gameObject, "Heaven", 1);
+            //FindObjectOfType<AudioManager>().Play(FindObjectOfType<AudioManager>().gameObject, "Heaven", 1);
             UpdateScoreText();
             Respawn = true;
             RespawnMan();
@@ -72,7 +82,7 @@ public class GameManagerScript : MonoBehaviour
     }
 
     public int i;
-    public int Day = 1;
+    public int Day;
     public float quota;
     public float DayValBase;
     public float DayVal;
@@ -83,21 +93,47 @@ public class GameManagerScript : MonoBehaviour
             AssetScript.RemoveClothes();
             AssetScript.Restart();
             AssetScript.AddClothes();
-            hatNumPlayer = Random.Range(0, Hats.Count);
+            hatNumPlayer = Random.Range(0, Hats1.Count);
             
             if (i == quota)
             {
                 i = 0;
-                Day++;
                 DayValBase = (Mathf.Pow(Day, 0.7f));
                 DayVal = 5 * DayValBase;
                 quota = (Mathf.Round(DayVal));
+                Day++;
                 FindObjectOfType<TimerCountdownScript>().time = 120;
-                hatNumList = Random.Range(0, Hats.Count);
+                DayList();
 
-                CriteriaText.text = "Required items:\n" + Hats[hatNumList].name;
+                CriteriaText.text = "Send to Hell if:\n" + Hats1[hatNumList].name;
+                DayCountText.text = "Day: " + Day;
             }
         }
+
+    }
+
+    void DayList()
+    {
+        if(Day == 1)
+        {
+            hatNumList = Random.Range(0, Hats1.Count);
+            hatNumPlayer = headObject.GetComponent<AssetListScript>().hatNum;
+            if (hatNumList == hatNumPlayer)
+            {
+                print("True");
+                accept = true;
+            }
+            else
+            {
+                print("false");
+                accept = false;
+            }
+        }
+        else if(Day == 2)
+        {
+
+        }
+        
 
     }
 
