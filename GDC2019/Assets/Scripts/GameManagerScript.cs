@@ -69,6 +69,10 @@ public class GameManagerScript : MonoBehaviour
             RespawnMan();
             FindObjectOfType<TimerCountdownScript>().time -= 10;
         }
+        if (Input.GetKeyDown("A"))
+            FindObjectOfType<AudioManager>().PlayDelayedAtPoint("Heaven", new Vector3(0, 3, -23), 1.5f);
+        if (Input.GetKeyDown("D"))
+            FindObjectOfType<AudioManager>().PlayDelayedAtPoint("Lava", new Vector3(0, -3, -23), 1.5f);
     }
 
     public int i;
