@@ -105,6 +105,102 @@ public class AudioManager : MonoBehaviour
         if (PositionInList != Sounds.Count)
             AudioSource.PlayClipAtPoint(Sounds[PositionInList], AfspilningsPlacering, Volume);
     }
+
+    //with Cancel effect instead of stagging
+    AudioClip NextClip;
+    public static GameObject AudioSourceForCancel;
+    //spiller lyden fra på et præcis vector3 efter delay
+    public void PlayDelayedAtPointWithCancel(string AssetName, Vector3 Point, float Delay)
+    {
+        int Position = 0;
+        int PositionInList = Sounds.Count;
+        foreach (AudioClip clipNames in Sounds)
+        {
+            if (clipNames.name == AssetName)
+                PositionInList = Position;
+            Position++;
+        }
+
+        Debug.Log("Clip played : " + Sounds[PositionInList].name);
+        if (PositionInList != Sounds.Count)
+        {
+            Debug.Log("Clip played : " + Sounds[PositionInList].name);
+            if (AudioSourceForCancel)
+            {
+                Invoke("StopAudioSourceForCancel", Delay);
+                //AudioSourceForCancel.GetComponent<AudioSource>().Stop();
+                CancelInvoke("DestroyForCancel");
+                Invoke("SetAduioSourceForCancel", Delay);
+                NextClip = Sounds[PositionInList];
+                //AudioSourceForCancel.GetComponent<AudioSource>().clip = Sounds[PositionInList];
+                //AudioSourceForCancel.GetComponent<AudioSource>().PlayDelayed(Delay);
+                Invoke("DestroyForCancel", Sounds[PositionInList].length);
+            }
+            else
+            {
+                GameObject AudioPlayer = new GameObject();
+                AudioPlayer.AddComponent<AudioSource>();
+                AudioPlayer.GetComponent<AudioSource>().clip = Sounds[PositionInList];
+                AudioPlayer.GetComponent<AudioSource>().PlayDelayed(Delay);
+                AudioSourceForCancel = AudioPlayer;
+                Invoke("DestroyForCancel", Sounds[PositionInList].length);
+            }
+            //Destroy(AudioPlayer, Sounds[PositionInList].length);
+        }
+    }
+    void DestroyForCancel()
+    {
+        Destroy(AudioSourceForCancel);
+        Debug.Log("Destroyed AudioSource");
+    }
+    void StopAudioSourceForCancel()
+    {
+        AudioSourceForCancel.GetComponent<AudioSource>().Stop();
+        Debug.Log("Canceled AudioSource");
+    }
+    void SetAduioSourceForCancel()
+    {
+        AudioSourceForCancel.GetComponent<AudioSource>().clip = NextClip;
+        AudioSourceForCancel.GetComponent<AudioSource>().Play();
+    }
+    //spiller lyden fra en specific GameObject's AudioSource på en Vector3 placering
+    public void PlayAtPositionWithCancel(string AssetName, Vector3 AfspilningsPlacering, float Volume)
+    {
+        int Position = 0;
+        int PositionInList = Sounds.Count;
+        foreach (AudioClip clipNames in Sounds)
+        {
+            if (clipNames.name == AssetName)
+                PositionInList = Position;
+            Position++;
+        }
+
+        if (PositionInList != Sounds.Count)
+        {
+            if (AudioSourceForCancel)
+            {
+                AudioSourceForCancel.GetComponent<AudioSource>().Stop();
+                CancelInvoke("DestroyForCancel");
+                AudioSourceForCancel.transform.position = AfspilningsPlacering;
+                AudioSourceForCancel.GetComponent<AudioSource>().clip = Sounds[PositionInList];
+                AudioSourceForCancel.GetComponent<AudioSource>().Play();
+                Invoke("DestroyForCancel", Sounds[PositionInList].length);
+            }
+            else
+            {
+                GameObject AudioPlayer = new GameObject();
+                AudioPlayer.transform.position = AfspilningsPlacering;
+                AudioPlayer.AddComponent<AudioSource>();
+                AudioPlayer.GetComponent<AudioSource>().spatialBlend = 1;
+                AudioPlayer.GetComponent<AudioSource>().clip = Sounds[PositionInList];
+                //AudioPlayer.GetComponent<AudioSource>().PlayDelayed(Delay);
+                //AudioSource.PlayClipAtPoint(Sounds[PositionInList], AfspilningsPlacering, Volume);
+                AudioPlayer.GetComponent<AudioSource>().Play();
+                AudioSourceForCancel = AudioPlayer;
+                Invoke("DestroyForCancel", Sounds[PositionInList].length);
+            }
+        }
+    }
     //for test
     public void PlayTestSound()
     {
