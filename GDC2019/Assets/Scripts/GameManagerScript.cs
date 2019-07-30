@@ -129,7 +129,7 @@ public class GameManagerScript : MonoBehaviour
                 quota = (Mathf.Round(DayVal));
                 Day++;
                 FindObjectOfType<TimerCountdownScript>().time = 120;
-                //DayList();
+                DayList();
 
                 CriteriaText.text = "Send to Hell if:\n" + Hats1[hatNumList].name;
                 DayCountText.text = "Day: " + Day;
@@ -138,7 +138,7 @@ public class GameManagerScript : MonoBehaviour
 
     }
 
-    /*void DayList()
+    void DayList()
     {
         if(Day >= 1)
         {
@@ -169,7 +169,7 @@ public class GameManagerScript : MonoBehaviour
         }
         
 
-    }*/
+    }
 
     void SpawnMan()
     {
