@@ -310,6 +310,12 @@ MonoBehaviour:
   - {fileID: 8019981289356801496, guid: 65d9ae0f6c6e41845b5e0eddbec7de90, type: 3}
   - {fileID: 3268950927196613169, guid: 940b1d0c44c07fe4bb9f664e034cc172, type: 3}
   - {fileID: 5377315337513945408, guid: 0a443de5dd26e4a4589a00665de3cfee, type: 3}
+  - {fileID: 3187654130529451952, guid: 10d2042f5ee040140a796095815dc0b0, type: 3}
+  - {fileID: 8955070099173220177, guid: 0442e76ba1d27e441bd2b9b9e548fbb4, type: 3}
+  - {fileID: 7303795974681201666, guid: 08d3fc02056110746b7766decaf5d83b, type: 3}
+  - {fileID: 1723804172994314418, guid: 1edd2cc65fa36004d83523cc638c6fda, type: 3}
+  - {fileID: 3253401478867554162, guid: 58e1b52dbf986534fa1faed04f2b2538, type: 3}
+  - {fileID: 7584266079303098662, guid: 4bd0b37bce70da943a64e7d7e202a01c, type: 3}
   Chest: []
   FaceHair: []
   Eye: []
@@ -1275,8 +1281,6 @@ MonoBehaviour:
   - {fileID: 7303795974681201666, guid: 08d3fc02056110746b7766decaf5d83b, type: 3}
   - {fileID: 1723804172994314418, guid: 1edd2cc65fa36004d83523cc638c6fda, type: 3}
   - {fileID: 3253401478867554162, guid: 58e1b52dbf986534fa1faed04f2b2538, type: 3}
-  - {fileID: 5684222583324789801, guid: 01131a035dec5b8499500eea94e29c96, type: 3}
-  - {fileID: 548324810981605743, guid: 1c93d7b3172cc7947a48b97646ad5b25, type: 3}
   - {fileID: 7584266079303098662, guid: 4bd0b37bce70da943a64e7d7e202a01c, type: 3}
   chest:
   - {fileID: 3703473954363953052, guid: e83798f329afead428588032c4b6dd24, type: 3}

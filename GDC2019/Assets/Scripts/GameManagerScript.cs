@@ -58,7 +58,7 @@ public class GameManagerScript : MonoBehaviour
 
 
 
-        if ((hatNumList == hatNum) || (chestNumList == chestNum) || (FaceHairNumList == faceNum) || (EyeNumList == eyeNum))
+        if ((hatNumList == hatNum) /* || (chestNumList == chestNum) || (FaceHairNumList == faceNum) || (EyeNumList == eyeNum)*/)
         {
             print("True");
             accept = true;
@@ -74,7 +74,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void Success()
     {
-        if ((Input.GetKeyDown(KeyCode.A) && accept == false || Input.GetKeyDown(KeyCode.D) && accept == true) && GameObject.FindGameObjectWithTag("Man") != null && ManPos.y <= 1)
+        if (((Input.GetKeyDown(KeyCode.A) && accept == false) || (Input.GetKeyDown(KeyCode.D) && accept == true)) && GameObject.FindGameObjectWithTag("Man") != null && ManPos.y <= 1)
         {
             DelayedExtra = 0.3f;
             print("success");
@@ -84,19 +84,22 @@ public class GameManagerScript : MonoBehaviour
             Respawn = true;
             RespawnMan();
             i++;
-            hatNumList = Random.Range(0, Hats1.Count);
+            //hatNumList = Random.Range(0, Hats1.Count);
 
         }
-        else if ((Input.GetKeyDown(KeyCode.A) && accept == true || Input.GetKeyDown(KeyCode.D) && accept == false) && GameObject.FindGameObjectWithTag("Man") != null && ManPos.y <= 1)
+        else if (((Input.GetKeyDown(KeyCode.A) && accept == true) || (Input.GetKeyDown(KeyCode.D) && accept == false)) && GameObject.FindGameObjectWithTag("Man") != null && ManPos.y <= 1)
         {
             print("Fail");
             Respawn = true;
             RespawnMan();
             FindObjectOfType<TimerCountdownScript>().time -= 10;
         }
-        if (Input.GetKeyDown("a"))
+        if (Input.GetKeyDown(KeyCode.A))
+        {
             FindObjectOfType<AudioManager>().PlayDelayedAtPointWithCancel("Heaven", new Vector3(0, 3, -23), DelayedExtra);
-        if (Input.GetKeyDown("d"))
+        }
+            
+        if (Input.GetKeyDown(KeyCode.D))
         {
             FindObjectOfType<AudioManager>().PlayAtPositionWithCancel("Burn in Hell you son of a bitch", new Vector3(0, -2, -23), 1);
             //FindObjectOfType<AudioManager>().PlayDelayedAtPointWithCancel("Lava", new Vector3(0, -3, -23), 1.2f);
@@ -126,7 +129,7 @@ public class GameManagerScript : MonoBehaviour
                 quota = (Mathf.Round(DayVal));
                 Day++;
                 FindObjectOfType<TimerCountdownScript>().time = 120;
-                DayList();
+                //DayList();
 
                 CriteriaText.text = "Send to Hell if:\n" + Hats1[hatNumList].name;
                 DayCountText.text = "Day: " + Day;
@@ -135,9 +138,9 @@ public class GameManagerScript : MonoBehaviour
 
     }
 
-    void DayList()
+    /*void DayList()
     {
-        if(Day == 1)
+        if(Day >= 1)
         {
             hatNumList = Random.Range(0, Hats1.Count);
             hatNum = headObject.GetComponent<AssetListScript>().hatNum;
@@ -152,21 +155,21 @@ public class GameManagerScript : MonoBehaviour
                 accept = false;
             }
         }
-        else if(Day == 3)
+        if(Day >= 3)
         {
 
         }
-        else if(Day == 5)
+        if(Day >= 5)
         {
 
         }
-        else if(Day == 7)
+        if(Day >= 7)
         {
 
         }
         
 
-    }
+    }*/
 
     void SpawnMan()
     {
