@@ -38,7 +38,7 @@ public class GameManagerScript : MonoBehaviour
         chestNumList = Random.Range(0, Chest.Count);
         FaceHairNumList = Random.Range(0, FaceHair.Count);
         EyeNumList = Random.Range(0, EyeNumList);
-        CriteriaText.text = "Send to Hell if:\n" + "Hat: " + Hats1[hatNumList].name;
+        CriteriaText.text = "Send to Hell if:\n" + Hats1[hatNumList].name;
         DayCountText.text = "Day: " + Day;
     }
 
@@ -133,7 +133,7 @@ public class GameManagerScript : MonoBehaviour
                 FindObjectOfType<TimerCountdownScript>().time = 120;
                 DayList();
 
-                CriteriaText.text = "Send to Hell if:\nHat:" + Hats1[hatNumList].name;
+                CriteriaText.text = "Send to Hell if:\n" + Hats1[hatNumList].name;
                 DayCountText.text = "Day: " + Day;
             }
         }
