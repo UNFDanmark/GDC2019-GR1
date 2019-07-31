@@ -95,7 +95,7 @@ public class GameManagerScript : MonoBehaviour
             print("Fail");
             Respawn = true;
             RespawnMan();
-            FindObjectOfType<TimerCountdownScript>().time -= 10;
+            FindObjectOfType<TimerCountdownScript>().time -= timePenalty;
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -113,6 +113,7 @@ public class GameManagerScript : MonoBehaviour
     public int i;
     public int Day;
     public float quota;
+    public float timePenalty = 10;
     public float DayValBase;
     public float DayVal;
     void RespawnMan()
@@ -129,12 +130,13 @@ public class GameManagerScript : MonoBehaviour
                 i = 0;
                 DayValBase = (Mathf.Pow(Day, 0.9f));
                 DayVal = 5 * DayValBase;
+                timePenalty += 5;
                 quota = (Mathf.Round(DayVal));
                 Day++;
                 FindObjectOfType<TimerCountdownScript>().time = 120;
                 DayList();
 
-                CriteriaText.text = "Send to Hell if:\n" + Hats1[hatNumList].name;
+                CriteriaText.text = "Send to Hell if:\nHat:" + Hats1[hatNumList].name;
                 DayCountText.text = "Day: " + Day;
             }
         }

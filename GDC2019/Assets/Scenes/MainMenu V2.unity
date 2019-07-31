@@ -370,6 +370,8 @@ MonoBehaviour:
   TheTexts:
   - {fileID: 1216860278}
   - {fileID: 1997003561}
+  - {fileID: 746097379}
+  - {fileID: 930133407}
 --- !u!114 &70670176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,6 +521,7 @@ RectTransform:
   - {fileID: 2115697347}
   - {fileID: 420638974}
   - {fileID: 2036653010}
+  - {fileID: 746097378}
   m_Father: {fileID: 1067879292}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1026,17 +1029,10 @@ MonoBehaviour:
   StartTime: 1
   Fade: 0
   TheTexts:
+  - {fileID: 429473015}
+  - {fileID: 1137919956}
   - {fileID: 2091952878}
-  - {fileID: 1997003561}
-  - {fileID: 1216860278}
-  - {fileID: 278649256}
-  - {fileID: 1079261438}
-  - {fileID: 110104567}
-  - {fileID: 1685256840}
-  - {fileID: 970264465}
-  - {fileID: 2136820294}
-  - {fileID: 1817098506}
-  - {fileID: 345448107}
+  - {fileID: 494578336}
 --- !u!114 &259035009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1291,6 +1287,7 @@ MonoBehaviour:
   - {fileID: 429473015}
   - {fileID: 1137919956}
   - {fileID: 2091952878}
+  - {fileID: 494578336}
 --- !u!114 &325882021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1729,6 +1726,85 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &494578334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 494578335}
+  - component: {fileID: 494578337}
+  - component: {fileID: 494578336}
+  m_Layer: 5
+  m_Name: Titel (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &494578335
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494578334}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.3333334, y: 1.3333334, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2095321783}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -30}
+  m_SizeDelta: {x: 600, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &494578336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494578334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 50
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Hell''s Office: Unpaid Overtime'
+--- !u!222 &494578337
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494578334}
+  m_CullTransparentMesh: 0
 --- !u!1 &624609215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,6 +2040,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710416581}
   m_CullTransparentMesh: 0
+--- !u!1 &746097377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 746097378}
+  - component: {fileID: 746097380}
+  - component: {fileID: 746097379}
+  m_Layer: 5
+  m_Name: Titel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &746097378
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746097377}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.3333334, y: 1.3333334, z: 1}
+  m_Children: []
+  m_Father: {fileID: 71341122}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -30}
+  m_SizeDelta: {x: 600, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &746097379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746097377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 50
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Hell''s Office: Unpaid Overtime'
+--- !u!222 &746097380
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746097377}
+  m_CullTransparentMesh: 0
 --- !u!1 &854740905
 GameObject:
   m_ObjectHideFlags: 0
@@ -2175,7 +2330,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ca9dcc363d5602c43add06a8d8128ec4, type: 3}
   - {fileID: 8300000, guid: 6c5d6981075a42d40abda70679d4eb49, type: 3}
   - {fileID: 8300000, guid: 3ce9255dd95e4634d81102a27ee2d533, type: 3}
-  SoundTrackVolume: 0.4
+  SoundTrackVolume: 0.1
   SoundTrack: {fileID: 8300000, guid: 1ce485f9828761748a49a82136dbbd86, type: 3}
 --- !u!4 &910131629
 Transform:
@@ -2221,6 +2376,7 @@ RectTransform:
   - {fileID: 1639992529}
   - {fileID: 1134814291}
   - {fileID: 710416582}
+  - {fileID: 1815857425}
   m_Father: {fileID: 1067879292}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2723,6 +2879,7 @@ MonoBehaviour:
   - {fileID: 1091871185}
   - {fileID: 225948146}
   - {fileID: 1706887965}
+  - {fileID: 1815857423}
 --- !u!114 &1134814294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3197,6 +3354,7 @@ MonoBehaviour:
   - {fileID: 1091871185}
   - {fileID: 225948146}
   - {fileID: 1706887965}
+  - {fileID: 1815857423}
 --- !u!114 &1639992526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3479,6 +3637,85 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1815857422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1815857425}
+  - component: {fileID: 1815857424}
+  - component: {fileID: 1815857423}
+  m_Layer: 5
+  m_Name: Titel (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1815857423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815857422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 50
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Hell''s Office: Unpaid Overtime'
+--- !u!222 &1815857424
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815857422}
+  m_CullTransparentMesh: 0
+--- !u!224 &1815857425
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815857422}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 924481957}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 150}
+  m_SizeDelta: {x: 600, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1817098505
 GameObject:
   m_ObjectHideFlags: 0
@@ -3713,17 +3950,10 @@ MonoBehaviour:
   StartTime: 1
   Fade: 0
   TheTexts:
-  - {fileID: 930133407}
   - {fileID: 1997003561}
   - {fileID: 1216860278}
-  - {fileID: 278649256}
-  - {fileID: 1079261438}
-  - {fileID: 110104567}
-  - {fileID: 1685256840}
-  - {fileID: 970264465}
-  - {fileID: 2136820294}
-  - {fileID: 1817098506}
-  - {fileID: 345448107}
+  - {fileID: 930133407}
+  - {fileID: 746097379}
 --- !u!114 &2036653013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3780,6 +4010,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1639992524}
         m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 910131628}
+        m_MethodName: PlaySoundTrackAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3940,6 +4181,7 @@ RectTransform:
   - {fileID: 259035006}
   - {fileID: 1381060390}
   - {fileID: 854740906}
+  - {fileID: 494578335}
   m_Father: {fileID: 1067879292}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
