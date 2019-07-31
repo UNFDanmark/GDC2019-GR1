@@ -17,7 +17,7 @@ public class GameManagerScript : MonoBehaviour
     public List<GameObject> FaceHair = new List<GameObject>();
     public List<GameObject> Eye = new List<GameObject>();
     public List<int> intList = new List<int>();
-    public int hatNumList, chestNumList, FaceHairNumList, EyeNumList, hatNum, chestNum, faceNum, eyeNum;
+    public int hatNumList, chestNumList, FaceHairNumList, EyeNumList, hatNum, chestNum, faceNum, eyeNum, intListNum;
     public Text CriteriaText;
     public Text DayCountText;
 
@@ -56,6 +56,9 @@ public class GameManagerScript : MonoBehaviour
         intList.Add(FaceHairNumList);
         intList.Add(EyeNumList);
 
+        intListNum = Random.Range(0, intList.Count);
+
+        //intList
 
 
         if ((hatNumList == hatNum) /* || (chestNumList == chestNum) || (FaceHairNumList == faceNum) || (EyeNumList == eyeNum)*/)
