@@ -56,10 +56,7 @@ public class GameManagerScript : MonoBehaviour
         intList.Add(FaceHairNumList);
         intList.Add(EyeNumList);
 
-        intListNum = Random.Range(0, intList.Count);
-
-        //intList
-
+        
 
         if ((hatNumList == hatNum) /* || (chestNumList == chestNum) || (FaceHairNumList == faceNum) || (EyeNumList == eyeNum)*/)
         {
@@ -82,11 +79,11 @@ public class GameManagerScript : MonoBehaviour
             DelayedExtra = 0.3f;
             print("success");
             score++;
-            //FindObjectOfType<AudioManager>().Play(FindObjectOfType<AudioManager>().gameObject, "Heaven", 1);
-            Respawn = true;
             i++;
-            RespawnMan();
+            //FindObjectOfType<AudioManager>().Play(FindObjectOfType<AudioManager>().gameObject, "Heaven", 1);
             UpdateScoreText();
+            Respawn = true;
+            RespawnMan();
             //hatNumList = Random.Range(0, Hats1.Count);
 
         }
@@ -95,6 +92,7 @@ public class GameManagerScript : MonoBehaviour
             print("Fail");
             Respawn = true;
             RespawnMan();
+            timePenalty += 5;
             FindObjectOfType<TimerCountdownScript>().time -= timePenalty;
         }
         if (Input.GetKeyDown(KeyCode.A))
@@ -133,10 +131,13 @@ public class GameManagerScript : MonoBehaviour
                 DayVal = 5 * DayValBase;
                 timePenalty += 5;
                 quota = (Mathf.Round(DayVal));
+                if (quota > 60)
+                {
+                    quota = 60;
+                }
                 FindObjectOfType<TimerCountdownScript>().time = 120;
                 DayList();
                 DayCountText.text = "Day: " + Day;
-                UpdateScoreText();
             }
         }
 
@@ -148,9 +149,14 @@ public class GameManagerScript : MonoBehaviour
         {
             hatNumList = Random.Range(0, Hats1.Count);
             hatNum = headObject.GetComponent<AssetListScript>().hatNum;
-            if (hatNumList == hatNum)
+            int rand = Random.Range(0, 99);
+            if(rand < 40)
             {
-                print("True");
+                hatNumList = hatNum;
+            }
+            if(hatNumList == hatNum)
+            {
+                print("true");
                 accept = true;
             }
             else
@@ -158,6 +164,7 @@ public class GameManagerScript : MonoBehaviour
                 print("false");
                 accept = false;
             }
+           //CritNum1 = intListNum = Random.Range(0, intList.Count);
         }
         if(Day >= 3)
         {
@@ -188,12 +195,60 @@ public class GameManagerScript : MonoBehaviour
         GetComponent<Text>().text = "Klienter: " + i + " / " + quota;
     }
 
-    bool match(int[] a0, int[] a1)
+    void compare()
     {
-        for (int j = 0; j < a0.Length; j++)
+        if(intListNum == 0)
         {
-            if (a0[j] == a1[j]) return true;
+            CriteriaText.text = Hats1[hatNumList].name;
+            if (hatNumList == hatNum)
+            {
+                accept = true;
+            }
+            else
+            {
+                accept = false;
+            }
         }
-        return false;
+        if(intListNum == 1)
+        {
+            if(chestNumList == chestNum)
+            {
+                accept = true;
+            }
+            else
+            {
+                accept = false;
+            }
+        }
+        if(intListNum == 2)
+        {
+            if(FaceHairNumList == faceNum)
+            {
+                accept = true;
+            }
+            else
+            {
+                accept = false;
+            }
+        }
+        if(intListNum == 3)
+        {
+            if(EyeNumList == eyeNum)
+            {
+                accept = true;
+            }
+            else
+            {
+                accept = false;
+            }
+        }
+    }
+
+    void CritText()
+    {
+        if(intListNum == 0)
+        {
+
+        }
     }
 }
