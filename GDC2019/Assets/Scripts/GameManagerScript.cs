@@ -192,7 +192,7 @@ public class GameManagerScript : MonoBehaviour
     }
     void UpdateScoreText()
     {
-        GetComponent<Text>().text = "Klienter: " + score;
+        GetComponent<Text>().text = "Klienter: " + i + " / " + quota;
     }
 
     void compare()
