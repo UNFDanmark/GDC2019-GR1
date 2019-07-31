@@ -56,10 +56,7 @@ public class GameManagerScript : MonoBehaviour
         intList.Add(FaceHairNumList);
         intList.Add(EyeNumList);
 
-        intListNum = Random.Range(0, intList.Count);
-
-        //intList
-
+        
 
         if ((hatNumList == hatNum) /* || (chestNumList == chestNum) || (FaceHairNumList == faceNum) || (EyeNumList == eyeNum)*/)
         {
@@ -145,18 +142,7 @@ public class GameManagerScript : MonoBehaviour
     {
         if (Day >= 1)
         {
-            hatNumList = Random.Range(0, Hats1.Count);
-            hatNum = headObject.GetComponent<AssetListScript>().hatNum;
-            if (hatNumList == hatNum)
-            {
-                print("True");
-                accept = true;
-            }
-            else
-            {
-                print("false");
-                accept = false;
-            }
+            intListNum = Random.Range(0, intList.Count);
         }
         if(Day >= 3)
         {
@@ -187,4 +173,51 @@ public class GameManagerScript : MonoBehaviour
         GetComponent<Text>().text = "Klienter: " + score;
     }
 
+    void compare()
+    {
+        if(intListNum == 0)
+        {
+            if (hatNumList == hatNum)
+            {
+                accept = true;
+            }
+            else
+            {
+                accept = false;
+            }
+        }
+        if(intListNum == 1)
+        {
+            if(chestNumList == chestNum)
+            {
+                accept = true;
+            }
+            else
+            {
+                accept = false;
+            }
+        }
+        if(intListNum == 2)
+        {
+            if(FaceHairNumList == faceNum)
+            {
+                accept = true;
+            }
+            else
+            {
+                accept = false;
+            }
+        }
+        if(intListNum == 3)
+        {
+            if(EyeNumList == eyeNum)
+            {
+                accept = true;
+            }
+            else
+            {
+                accept = false;
+            }
+        }
+    }
 }
