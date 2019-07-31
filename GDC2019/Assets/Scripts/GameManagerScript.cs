@@ -56,7 +56,10 @@ public class GameManagerScript : MonoBehaviour
         intList.Add(FaceHairNumList);
         intList.Add(EyeNumList);
 
-        
+        intListNum = Random.Range(0, intList.Count);
+
+        //intList
+
 
         if ((hatNumList == hatNum) /* || (chestNumList == chestNum) || (FaceHairNumList == faceNum) || (EyeNumList == eyeNum)*/)
         {
@@ -80,10 +83,10 @@ public class GameManagerScript : MonoBehaviour
             print("success");
             score++;
             //FindObjectOfType<AudioManager>().Play(FindObjectOfType<AudioManager>().gameObject, "Heaven", 1);
-            UpdateScoreText();
             Respawn = true;
-            RespawnMan();
             i++;
+            RespawnMan();
+            UpdateScoreText();
             //hatNumList = Random.Range(0, Hats1.Count);
 
         }
@@ -125,14 +128,15 @@ public class GameManagerScript : MonoBehaviour
             if (i == quota)
             {
                 i = 0;
+                Day++;
                 DayValBase = (Mathf.Pow(Day, 0.9f));
                 DayVal = 5 * DayValBase;
                 timePenalty += 5;
                 quota = (Mathf.Round(DayVal));
-                Day++;
                 FindObjectOfType<TimerCountdownScript>().time = 120;
                 DayList();
                 DayCountText.text = "Day: " + Day;
+                UpdateScoreText();
             }
         }
 
@@ -142,7 +146,18 @@ public class GameManagerScript : MonoBehaviour
     {
         if (Day >= 1)
         {
-            intListNum = Random.Range(0, intList.Count);
+            hatNumList = Random.Range(0, Hats1.Count);
+            hatNum = headObject.GetComponent<AssetListScript>().hatNum;
+            if (hatNumList == hatNum)
+            {
+                print("True");
+                accept = true;
+            }
+            else
+            {
+                print("false");
+                accept = false;
+            }
         }
         if(Day >= 3)
         {
@@ -170,54 +185,15 @@ public class GameManagerScript : MonoBehaviour
     }
     void UpdateScoreText()
     {
-        GetComponent<Text>().text = "Klienter: " + score;
+        GetComponent<Text>().text = "Klienter: " + i + " / " + quota;
     }
 
-    void compare()
+    bool match(int[] a0, int[] a1)
     {
-        if(intListNum == 0)
+        for (int j = 0; j < a0.Length; j++)
         {
-            if (hatNumList == hatNum)
-            {
-                accept = true;
-            }
-            else
-            {
-                accept = false;
-            }
+            if (a0[j] == a1[j]) return true;
         }
-        if(intListNum == 1)
-        {
-            if(chestNumList == chestNum)
-            {
-                accept = true;
-            }
-            else
-            {
-                accept = false;
-            }
-        }
-        if(intListNum == 2)
-        {
-            if(FaceHairNumList == faceNum)
-            {
-                accept = true;
-            }
-            else
-            {
-                accept = false;
-            }
-        }
-        if(intListNum == 3)
-        {
-            if(EyeNumList == eyeNum)
-            {
-                accept = true;
-            }
-            else
-            {
-                accept = false;
-            }
-        }
+        return false;
     }
 }
