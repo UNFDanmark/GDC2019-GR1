@@ -148,6 +148,11 @@ public class GameManagerScript : MonoBehaviour
         {
             hatNumList = Random.Range(0, Hats1.Count);
             hatNum = headObject.GetComponent<AssetListScript>().hatNum;
+            int rand = Random.Range(0, 9);
+            if (rand < 4)
+            {
+                hatNumList = hatNum;
+            }
             if (hatNumList == hatNum)
             {
                 print("True");
@@ -186,14 +191,5 @@ public class GameManagerScript : MonoBehaviour
     void UpdateScoreText()
     {
         GetComponent<Text>().text = "Klienter: " + i + " / " + quota;
-    }
-
-    bool match(int[] a0, int[] a1)
-    {
-        for (int j = 0; j < a0.Length; j++)
-        {
-            if (a0[j] == a1[j]) return true;
-        }
-        return false;
     }
 }

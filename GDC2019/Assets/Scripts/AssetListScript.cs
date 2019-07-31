@@ -68,6 +68,6 @@ public class AssetListScript : MonoBehaviour
 
     public void Restart()
     {
-        transform.parent.position = new Vector3(0, 6, -23);
+        transform.parent.position = new Vector3(0, 1.6f, -23);
     }
 }
