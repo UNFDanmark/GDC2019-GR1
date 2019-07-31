@@ -131,7 +131,7 @@ public class GameManagerScript : MonoBehaviour
                 FindObjectOfType<TimerCountdownScript>().time = 120;
                 DayList();
 
-                CriteriaText.text = "Send to Hell if:\n" + Hats1[hatNumList].name;
+                CriteriaText.text = "Send to Hell if:\nHat:" + Hats1[hatNumList].name;
                 DayCountText.text = "Day: " + Day;
             }
         }
