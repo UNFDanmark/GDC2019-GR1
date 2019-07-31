@@ -17,7 +17,7 @@ public class GameManagerScript : MonoBehaviour
     public List<GameObject> FaceHair = new List<GameObject>();
     public List<GameObject> Eye = new List<GameObject>();
     public List<int> intList = new List<int>();
-    public int hatNumList, chestNumList, FaceHairNumList, EyeNumList, hatNum, chestNum, faceNum, eyeNum;
+    public int hatNumList, chestNumList, FaceHairNumList, EyeNumList, hatNum, chestNum, faceNum, eyeNum, intListNum;
     public Text CriteriaText;
     public Text DayCountText;
 
@@ -38,7 +38,7 @@ public class GameManagerScript : MonoBehaviour
         chestNumList = Random.Range(0, Chest.Count);
         FaceHairNumList = Random.Range(0, FaceHair.Count);
         EyeNumList = Random.Range(0, EyeNumList);
-        CriteriaText.text = "Send to Hell if:\n" + "Hat: " + Hats1[hatNumList].name;
+        CriteriaText.text = "Send to Hell if:\n" + Hats1[hatNumList].name;
         DayCountText.text = "Day: " + Day;
     }
 
@@ -56,6 +56,9 @@ public class GameManagerScript : MonoBehaviour
         intList.Add(FaceHairNumList);
         intList.Add(EyeNumList);
 
+        intListNum = Random.Range(0, intList.Count);
+
+        //intList
 
 
         if ((hatNumList == hatNum) /* || (chestNumList == chestNum) || (FaceHairNumList == faceNum) || (EyeNumList == eyeNum)*/)
@@ -92,7 +95,7 @@ public class GameManagerScript : MonoBehaviour
             print("Fail");
             Respawn = true;
             RespawnMan();
-            FindObjectOfType<TimerCountdownScript>().time -= 10;
+            FindObjectOfType<TimerCountdownScript>().time -= timePenalty;
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -110,6 +113,7 @@ public class GameManagerScript : MonoBehaviour
     public int i;
     public int Day;
     public float quota;
+    public float timePenalty = 10;
     public float DayValBase;
     public float DayVal;
     void RespawnMan()
@@ -126,12 +130,13 @@ public class GameManagerScript : MonoBehaviour
                 i = 0;
                 DayValBase = (Mathf.Pow(Day, 0.9f));
                 DayVal = 5 * DayValBase;
+                timePenalty += 5;
                 quota = (Mathf.Round(DayVal));
                 Day++;
                 FindObjectOfType<TimerCountdownScript>().time = 120;
                 DayList();
 
-                CriteriaText.text = "Send to Hell if:\nHat:" + Hats1[hatNumList].name;
+                CriteriaText.text = "Send to Hell if:\n" + Hats1[hatNumList].name;
                 DayCountText.text = "Day: " + Day;
             }
         }
