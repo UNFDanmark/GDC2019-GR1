@@ -79,11 +79,11 @@ public class GameManagerScript : MonoBehaviour
             DelayedExtra = 0.3f;
             print("success");
             score++;
+            i++;
             //FindObjectOfType<AudioManager>().Play(FindObjectOfType<AudioManager>().gameObject, "Heaven", 1);
             UpdateScoreText();
             Respawn = true;
             RespawnMan();
-            i++;
             //hatNumList = Random.Range(0, Hats1.Count);
 
         }
@@ -92,6 +92,7 @@ public class GameManagerScript : MonoBehaviour
             print("Fail");
             Respawn = true;
             RespawnMan();
+            timePenalty += 5;
             FindObjectOfType<TimerCountdownScript>().time -= timePenalty;
         }
         if (Input.GetKeyDown(KeyCode.A))
@@ -125,11 +126,15 @@ public class GameManagerScript : MonoBehaviour
             if (i == quota)
             {
                 i = 0;
+                Day++;
                 DayValBase = (Mathf.Pow(Day, 0.9f));
                 DayVal = 5 * DayValBase;
                 timePenalty += 5;
                 quota = (Mathf.Round(DayVal));
-                Day++;
+                if (quota > 60)
+                {
+                    quota = 60;
+                }
                 FindObjectOfType<TimerCountdownScript>().time = 120;
                 DayList();
                 DayCountText.text = "Day: " + Day;
@@ -144,8 +149,8 @@ public class GameManagerScript : MonoBehaviour
         {
             hatNumList = Random.Range(0, Hats1.Count);
             hatNum = headObject.GetComponent<AssetListScript>().hatNum;
-            int rand = Random.Range(0, 9);
-            if(rand > 4)
+            int rand = Random.Range(0, 99);
+            if(rand < 40)
             {
                 hatNumList = hatNum;
             }
