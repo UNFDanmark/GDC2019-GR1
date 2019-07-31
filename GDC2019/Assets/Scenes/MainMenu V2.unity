@@ -1454,7 +1454,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Mentor\t\t\t\t\t\tAllan Simonsen"
+  m_Text: "Mentor\t\t\t\t\t\t\tAllan Simonsen"
 --- !u!222 &345448108
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2697,7 +2697,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Lyd\t\t\t\t\t\t\tNicolai Hansen"
+  m_Text: "Lyd\t\t\t\t\t\t\t\tNicolai Hansen"
 --- !u!222 &1079261439
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3767,7 +3767,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Mentor\t\t\t\t\t\tRobert (Robbie) Rosendorf"
+  m_Text: "Mentor\t\t\t\t\t\t\tRobert (Robbie) Rosendorf"
 --- !u!222 &1817098507
 CanvasRenderer:
   m_ObjectHideFlags: 0
