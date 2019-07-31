@@ -333,11 +333,13 @@ MonoBehaviour:
   chestNum: 0
   faceNum: 0
   eyeNum: 0
+  intListNum: 0
   CriteriaText: {fileID: 1605310413}
   DayCountText: {fileID: 1507641466}
   i: 0
   Day: 1
   quota: 5
+  timePenalty: 10
   DayValBase: 0
   DayVal: 0
 --- !u!114 &180740906
@@ -449,11 +451,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7687cc783d2ac4146bfc69c2318f2945, type: 2}
-    - target: {fileID: 5452068790998213776, guid: aa83ff82eadac2447899e5b1044a701d,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9b6a0095abb61e7468c171a0b38510ed, type: 2}
     - target: {fileID: 2610122404186736039, guid: aa83ff82eadac2447899e5b1044a701d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -468,7 +465,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: ff0569f7025b6ac49ac284a2bf6ec707, type: 2}
+      objectReference: {fileID: 2100000, guid: cf38ff3e932d36c46aee570b32c23e23, type: 2}
     - target: {fileID: -6253431442408505498, guid: aa83ff82eadac2447899e5b1044a701d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -484,6 +481,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 36da45a129989134bb135937cb107981, type: 2}
+    - target: {fileID: 5452068790998213776, guid: aa83ff82eadac2447899e5b1044a701d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b6a0095abb61e7468c171a0b38510ed, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa83ff82eadac2447899e5b1044a701d, type: 3}
 --- !u!1001 &339662903

@@ -38,7 +38,7 @@ public class GameManagerScript : MonoBehaviour
         chestNumList = Random.Range(0, Chest.Count);
         FaceHairNumList = Random.Range(0, FaceHair.Count);
         EyeNumList = Random.Range(0, EyeNumList);
-        CriteriaText.text = "Send to Hell if:\n" + "Hat: " + Hats1[hatNumList].name;
+        CriteriaText.text = "Send to Hell if:\n" + Hats1[hatNumList].name;
         DayCountText.text = "Day: " + Day;
     }
 
@@ -124,7 +124,7 @@ public class GameManagerScript : MonoBehaviour
             AssetScript.Restart();
             AssetScript.AddClothes();
             hatNum = Random.Range(0, Hats1.Count);
-            
+            DayList();
             if (i == quota)
             {
                 i = 0;
@@ -135,8 +135,6 @@ public class GameManagerScript : MonoBehaviour
                 Day++;
                 FindObjectOfType<TimerCountdownScript>().time = 120;
                 DayList();
-
-                CriteriaText.text = "Send to Hell if:\nHat:" + Hats1[hatNumList].name;
                 DayCountText.text = "Day: " + Day;
             }
         }
@@ -145,7 +143,7 @@ public class GameManagerScript : MonoBehaviour
 
     void DayList()
     {
-        if(Day >= 1)
+        if (Day >= 1)
         {
             hatNumList = Random.Range(0, Hats1.Count);
             hatNum = headObject.GetComponent<AssetListScript>().hatNum;
@@ -172,7 +170,7 @@ public class GameManagerScript : MonoBehaviour
         {
 
         }
-        
+        CriteriaText.text = "Send to Hell if:\n" + Hats1[hatNumList].name;
 
     }
 
