@@ -83,10 +83,10 @@ public class GameManagerScript : MonoBehaviour
             print("success");
             score++;
             //FindObjectOfType<AudioManager>().Play(FindObjectOfType<AudioManager>().gameObject, "Heaven", 1);
-            UpdateScoreText();
             Respawn = true;
-            RespawnMan();
             i++;
+            RespawnMan();
+            UpdateScoreText();
             //hatNumList = Random.Range(0, Hats1.Count);
 
         }
@@ -128,14 +128,15 @@ public class GameManagerScript : MonoBehaviour
             if (i == quota)
             {
                 i = 0;
+                Day++;
                 DayValBase = (Mathf.Pow(Day, 0.9f));
                 DayVal = 5 * DayValBase;
                 timePenalty += 5;
                 quota = (Mathf.Round(DayVal));
-                Day++;
                 FindObjectOfType<TimerCountdownScript>().time = 120;
                 DayList();
                 DayCountText.text = "Day: " + Day;
+                UpdateScoreText();
             }
         }
 
@@ -184,7 +185,15 @@ public class GameManagerScript : MonoBehaviour
     }
     void UpdateScoreText()
     {
-        GetComponent<Text>().text = "Klienter: " + score;
+        GetComponent<Text>().text = "Klienter: " + i + " / " + quota;
     }
 
+    bool match(int[] a0, int[] a1)
+    {
+        for (int j = 0; j < a0.Length; j++)
+        {
+            if (a0[j] == a1[j]) return true;
+        }
+        return false;
+    }
 }
